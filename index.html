@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEX® PERFORMANCE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#101010;color:white}
+a{text-decoration:none;color:inherit}
+.announcement{text-align:center;background:#c9ff35;color:#111;padding:11px;font-size:11px;font-weight:800;letter-spacing:2px}
+nav{height:75px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #333}
+.logo{font-size:25px;font-weight:900;letter-spacing:-2px}
+.logo span{color:#c9ff35}
+.links{display:flex;gap:30px;font-size:12px;font-weight:700}
+.cart{border:1px solid #555;padding:12px 18px;border-radius:30px;font-size:12px}
+.hero{min-height:650px;padding:100px 8%;display:flex;align-items:center;background:linear-gradient(90deg,#000 10%,#0008 60%,transparent),url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1800') center/cover}
+.hero-content{max-width:650px}
+.tag{color:#c9ff35;font-size:12px;letter-spacing:4px;font-weight:800}
+h1{font-size:clamp(55px,9vw,110px);line-height:.92;letter-spacing:-7px;margin:25px 0}
+h1 span{color:#c9ff35}
+.hero p{color:#ccc;line-height:1.8;max-width:430px;font-size:14px}
+.btn{display:inline-block;background:#c9ff35;color:#111;padding:17px 28px;margin-top:30px;font-size:12px;font-weight:900;letter-spacing:1px}
+.section{padding:90px 8%}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}
+h2{font-size:38px;letter-spacing:-2px}
+.section-head p{color:#999;font-size:12px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:#1c1c1c;padding-bottom:22px}
+.product img{width:100%;height:300px;object-fit:cover;display:block}
+.product-info{padding:20px}
+.product-info h3{font-size:15px;margin-bottom:8px}
+.product-info p{color:#aaa;font-size:13px}
+.product-info button{margin-top:18px;background:#c9ff35;border:0;padding:12px 18px;font-weight:800;cursor:pointer}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;background:#191919}
+.story img{width:100%;height:420px;object-fit:cover}
+.story p{color:#aaa;line-height:1.9;margin-top:20px;font-size:14px}
+.statement{text-align:center;padding:110px 10%;background:#c9ff35;color:#111}
+.statement h2{font-size:clamp(40px,7vw,75px);font-weight:900;line-height:1}
+footer{padding:45px 8%;display:flex;justify-content:space-between;color:#888;font-size:12px}
+@media(max-width:700px){
+nav{padding:0 5%}.links{gap:12px;font-size:10px}
+.hero{min-height:570px;padding:70px 7%}
+h1{letter-spacing:-4px}
+.section{padding:65px 6%}
+.products{grid-template-columns:1fr}
+.product img{height:350px}
+.story{grid-template-columns:1fr}
+.story img{height:300px}
+footer{gap:20px;flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+FREE SHIPPING ON ORDERS ABOVE ₹2,999
+</div>
+
+<nav>
+<div class="logo">APEX<span>®</span></div>
+<div class="links">
+<a href="#home">HOME</a>
+<a href="#collection">COLLECTION</a>
+<a href="#story">OUR STORY</a>
+</div>
+<div class="cart">CART (<span id="count">0</span>)</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="tag">BUILT DIFFERENT. PERFORM DIFFERENT.</div>
+<h1>GO BEYOND<br><span>LIMITS.</span></h1>
+<p>Engineered for movement. Designed for ambition. Discover performance wear that pushes you beyond your limits.</p>
+<a href="#collection" class="btn">EXPLORE COLLECTION ↗</a>
+</div>
+</section>
+
+<section class="section" id="collection">
+<div class="section-head">
+<h2>THE COLLECTION.</h2>
+<p>01 — PERFORMANCE ESSENTIALS</p>
+</div>
+
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800" alt="Running">
+<div class="product-info">
+<h3>APEX RUNNING SERIES</h3>
+<p>Lightweight performance wear</p>
+<button onclick="addCart()">ADD TO CART — ₹1,999</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800" alt="Training">
+<div class="product-info">
+<h3>APEX TRAINING SERIES</h3>
+<p>Made for intense sessions</p>
+<button onclick="addCart()">ADD TO CART — ₹2,499</button>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800" alt="Activewear">
+<div class="product-info">
+<h3>APEX ACTIVE SERIES</h3>
+<p>Comfort meets performance</p>
+<button onclick="addCart()">ADD TO CART — ₹1,799</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section story" id="story">
+<img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000" alt="Gym training">
+<div>
+<div class="tag">OUR PHILOSOPHY</div>
+<h2>NOT JUST<br>SPORTSWEAR.</h2>
+<p>APEX is built for those who refuse to settle. Every movement is an opportunity to improve. Every challenge is an opportunity to grow. We believe performance starts with the right mindset.</p>
+<a href="#collection" class="btn">DISCOVER APEX ↗</a>
+</div>
+</section>
+
+<section class="statement">
+<h2>YOUR LIMITS<br>ARE YOURS TO BREAK.</h2>
+<p>MOVE WITH PURPOSE. LIVE WITH POWER.</p>
+</section>
+
+<footer>
+<div class="logo">APEX<span>®</span></div>
+<p>© 2026 APEX PERFORMANCE. ALL RIGHTS RESERVED.</p>
+<p>BUILT FOR THE NEXT LEVEL.</p>
+</footer>
+
+<script>
+let cart=0;
+function addCart(){
+cart++;
+document.getElementById("count").innerText=cart;
+alert("Product added to demo cart!");
+}
+</script>
+
+</body>
+</html>
